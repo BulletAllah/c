@@ -39,7 +39,7 @@ local function MakeDraggable(ClickObject, Object)
 	end)
 end
 
-function Library:CreateWindow(Config, Parent)
+function Library:CreateWindow(Config)
 	local WindowInit = {}
 	local Folder = game:GetObjects("rbxassetid://7141683860")[1]
 	local Screen = Folder.Bracket:Clone()
@@ -54,7 +54,7 @@ function Library:CreateWindow(Config, Parent)
 	end
 	
 	Screen.Name =  HttpService:GenerateGUID(false)
-	Screen.Parent = Parent
+	Screen.Parent = game:GetService("CoreGui")
 	Topbar.WindowName.Text = Config.WindowName
 
 	MakeDraggable(Topbar,Main)
