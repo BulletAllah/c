@@ -10800,7 +10800,7 @@ addcmd('reach',{},function(args, speaker)
 				a.Adornee = v.Handle
 				v.Handle.Massless = true
 				v.Handle.Size = Vector3.new(0.5,0.5,args[1])
-				v.GripPos = Vector3.new(0,0,0)
+				--v.GripPos = Vector3.new(0,0,0)
 				speaker.Character.Humanoid:UnequipTools()
 			else
 				currentToolSize = v.Handle.Size
@@ -10811,7 +10811,7 @@ addcmd('reach',{},function(args, speaker)
 				a.Adornee = v.Handle
 				v.Handle.Massless = true
 				v.Handle.Size = Vector3.new(0.5,0.5,60)
-				v.GripPos = Vector3.new(0,0,0)
+				--v.GripPos = Vector3.new(0,0,0)
 				speaker.Character.Humanoid:UnequipTools()
 			end
 		end
