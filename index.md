@@ -1,37 +1,52 @@
-## Welcome to GitHub Pages
+## yth0z's stuff
 
-You can use the [editor on GitHub](https://github.com/BulletAllah/c/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Perma Reanimation
 
 ```markdown
-Syntax highlighted code block
+Bypass = "death"
+loadstring(game:HttpGet('https://raw.githubusercontent.com/BulletAllah/c/main/perma.lua'))()
 
-# Header 1
-## Header 2
-### Header 3
+for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+if v:IsA("BasePart") then
+game:GetService("RunService").Heartbeat:connect(function()
+v.Velocity = Vector3.new(25.045,0,0)
+end)
+end
+end
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+if v:IsA("Accessory") then
+game:GetService("RunService").Heartbeat:connect(function()
+v.Handle.Velocity = Vector3.new(25.045,0,0)
+end)
+end
+end
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### Infinite Yield
 
-### Jekyll Themes
+```markdown
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BulletAllah/c/main/iy.lua", true))()
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/BulletAllah/c/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Anti Chat Logging (Synapse Only)
 
-### Support or Contact
+```markdown
+local CloneFunction = clonefunction
+local CheckCaller = CloneFunction(checkcaller)
+local HookFunction = CloneFunction(hookfunction)
+local LocalPlayer = game.Players.PlayerAdded:wait()
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+local PostMessage = require(LocalPlayer:WaitForChild("PlayerScripts", 1/0):WaitForChild("ChatScript", 1/0):WaitForChild("ChatMain", 1/0)).MessagePosted
+getgenv().MessageEvent = Instance.new("BindableEvent")
+
+local OldFunctionHook
+local PostMessageHook = function(self, msg)
+   if not CheckCaller() and self == PostMessage then
+       MessageEvent:Fire(msg)
+       return
+   end
+   return OldFunctionHook(self, msg)
+end
+OldFunctionHook = HookFunction(PostMessage.fire, PostMessageHook)
+```
