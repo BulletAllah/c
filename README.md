@@ -1,1 +1,1 @@
-#  pure garbage
+#  things that i use haha funyny
