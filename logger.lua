@@ -1,3 +1,5 @@
+print([[Made by yth0z @BulletAllah]])
+
 _G.HttpEnabled = true
 
 if setclipboard then
