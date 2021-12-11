@@ -54,6 +54,6 @@ OldFunctionHook = HookFunction(PostMessage.fire, PostMessageHook)
 ### HTTP Logger
 
 
-```markdown 
+```markdown
 loadstring(game:HttpGet("https://raw.githubusercontent.com/BulletAllah/c/main/logger.lua", true))()
 ```
